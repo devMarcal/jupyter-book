@@ -6,7 +6,7 @@ root: introduction
 parts:
   - caption: Parte 1
     chapters: 
-    - file: intro
+    - file: first
     - file: bayes
     - file: linear
       sections:
