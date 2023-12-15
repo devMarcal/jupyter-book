@@ -3,12 +3,10 @@
 
 format: jb-book
 root: introduction
-
 chapters:
-
-- file: first
-- file: bayes
-- file: linear
-- file: nao-linear
-- file: combinacao
-- file: agrupamento
+  - file: first
+  - file: bayes
+  - file: linear
+  - file: nao-linear
+  - file: combinacao
+  - file: agrupamento
