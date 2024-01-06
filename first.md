@@ -5,7 +5,7 @@
 </style>
 
 
-> # Introdução à padrões de Xamuel
+> # Introdução ao reconhecimento de padrões 
 
 Segundo Rogério Negri, o reconhecimento de padrões compreende uma área de pesquisa cujo foco persiste em problemas relacionados à classificação e reconhecimento de objetos. Com caráter multidisciplinar, especialmente dentro da informática, os estudos em reconhecimento de padrões fazem interface com diversas áreas da estatística, engenharia, inteligência artificial, ciência da computação, mineração de dados e etc. O reconhecimento de padrões também possui forte correlação com o aprendizado de máquina, que é outra área de conhecimento bastante abrangente e que está em constante desenvolvimento nos últimos anos.
 
