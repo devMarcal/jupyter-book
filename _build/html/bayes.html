@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Capítulo 2: Classificadores lineares" href="linear.html" />
-    <link rel="prev" title="Introdução aos padrões de Xamuel" href="first.html" />
+    <link rel="prev" title="Introdução à padrões de Xamuel" href="first.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="first.html">Introdução aos padrões de Xamuel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">Introdução à padrões de Xamuel</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 1: Teoria da decisão de Bayes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linear.html">Capítulo 2: Classificadores lineares</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nao-linear.html">Capítulo 3: Classificadores não lineares</a></li>
@@ -377,10 +377,9 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="capitulo-1-teoria-da-decisao-de-bayes">
 <h1>Capítulo 1: Teoria da decisão de Bayes<a class="headerlink" href="#capitulo-1-teoria-da-decisao-de-bayes" title="Permalink to this heading">#</a></h1>
 <p>A Regra de Bayes, demonstrada na equação 1, é uma equação que relaciona a ocorrência de dois eventos através de suas probabilidades condicionais. Ela é utilizada para calcular a probabilidade de um evento ocorrer, dado que outro evento já ocorreu.</p>
-<div class="math notranslate nohighlight">
-\[\begin{equation}
+<p><span class="math notranslate nohighlight">\(\begin{equation}
     P(A|B) = \frac{\text{P(B|A)P(A)}}{\text{P(B)}}\
-\end{equation}\]</div>
+\end{equation}\)</span></p>
 <p>Onde:</p>
 <ul class="simple">
 <li><p>P(A|B) é a probabilidade do evento A ocorrer dado que o evento B já ocorreu;</p></li>
@@ -389,6 +388,63 @@ document.write(`
 <li><p>P(B) é a probabilidade do evento B ocorrer independentemente do evento A.</p></li>
 </ul>
 <p>Como ponto de partida, vamos admitir que os padrões são expressos de forma genérica por <span class="math notranslate nohighlight">\(x = [x_{1},...x_{n}]^T\)</span>, sobre os quais desejamos inferir sua pertinência em uma dada classe em <span class="math notranslate nohighlight">\(Ω =  \)</span>{<span class="math notranslate nohighlight">\(ω_{1},...,ω_{c}\)</span>}. No contexto estatístico, a seguinte regra geral pode ser empregada para tal processo de classificação:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+    (\textbf{x},ω_{j}) \leftrightarrow arg_{ω_{j}\inΩ} max P(ω_{j}|\textbf{x})
+\end{equation}\)</span></p>
+<p>em que <span class="math notranslate nohighlight">\(P(ω_{j}|\textbf{x})\)</span>, denominada probabilidade <span class="math notranslate nohighlight">\(\textit{a posteriori}\)</span>, representa a probabilidade de <span class="math notranslate nohighlight">\(\textbf{x}\)</span> pertencer a <span class="math notranslate nohighlight">\(ω_{j}\)</span>.</p>
+<p>De modo geral, em um problema de classificação, a probabilidade <span class="math notranslate nohighlight">\(\textit{a posteriori}\)</span> que compõe a regra expressa pela a equação anterior é desconhecida. No entanto, a Regra de Bayes possibilita o seu cálculo por meio da probabilidade <span class="math notranslate nohighlight">\(\textit{a priori}\)</span> <span class="math notranslate nohighlight">\(P(ω_{j})\)</span>, da evidência <span class="math notranslate nohighlight">\(p(\textbf{x})\)</span> e da função de verossimilhança <span class="math notranslate nohighlight">\(p(\textbf{x}|ω_{j})\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+    P(ω_{j}|\textbf{x}) = \frac{p(\textbf{x}|ω_{j})P(ω_{j})}{p(\textbf{x})}
+\end{equation}\)</span></p>
+<p>sendo <span class="math notranslate nohighlight">\(p(x) = \sum_{j=1}^{c} p(\textbf{x}|ω_{j})P(ω_{j})\)</span>.</p>
+<p>Uma vez conhecida <span class="math notranslate nohighlight">\(P(ω_{j}|\textbf{x})\)</span>, a classificação de <span class="math notranslate nohighlight">\(\textbf{x}\)</span> segundo <span class="math notranslate nohighlight">\(ω_{j}\)</span>, com <span class="math notranslate nohighlight">\(j=1,...,c\)</span>, torna-se um problema simples.
+Com o objetivo de aprofundar as discussões introduzidas, vamos realizar uma análise sobre o erro cometido ao utilizar a Regra de Bayes no processo de classificação. A fim de favorecer o entendimento, considere um problema de classificação entre apenas duas classes <span class="math notranslate nohighlight">\(ω_{1}\)</span> e <span class="math notranslate nohighlight">\(ω_{2}\)</span> equiprováveis, cujas observações estão definidas sobre o conjunto dos números reais (i.e., <span class="math notranslate nohighlight">\(\textbf{X} ≡ \mathbb{R}\)</span>), o qual é dividido entre as regiões <span class="math notranslate nohighlight">\(R_{1}\)</span> e <span class="math notranslate nohighlight">\(R_{2}\)</span>. Enquanto a região <span class="math notranslate nohighlight">\(R_{1}\)</span> compreende os valores <span class="math notranslate nohighlight">\(\textbf{x}\)</span> tais que <span class="math notranslate nohighlight">\(P(ω_{1}|\textbf{x})&gt;P(ω_{2}|\textbf{x})\)</span>. A Figura 1 ilustra a relação entre as regiões e as probabilidades mencionadas.</p>
+<p><img alt="figura1" src="_images/figura1.jpg" /></p>
+<p>Segundo essas considerações, podemos expressar a probabilidade do erro de classificação por:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+P_{erro} = P(\textbf{x} ∈ R_{2},ω_{1}) + P(\textbf{x} ∈ R_{1},ω_{2})
+\end{equation}\)</span></p>
+<p>em que <span class="math notranslate nohighlight">\(P(\textbf{x} ∈ R_{2},ω_{1})\)</span> quantifica a probabilidade do padrão <span class="math notranslate nohighlight">\(\textbf{x}\)</span> pertencer à região <span class="math notranslate nohighlight">\(R_{2}\)</span>, apesar da sua classe original ser <span class="math notranslate nohighlight">\(ω_{1}\)</span>. Partindo da equação anterior, desenvolvemos:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+P_{erro} = P(\textbf{x} ∈ R_{2},ω_{1}) + P(\textbf{x} ∈ R_{1},ω_{2}) = [ \int_{R_{2}} p(\textbf{x}|ω_{1}) \,dx]P(ω_{1}) + [ \int_{R_{1}} p(\textbf{x}|ω_{2}) \,dx]P(ω_{2}) = \frac{1}{2}\int_{R_{2}} p(\textbf{x}|ω_{1}) \,dx + \frac{1}{2}\int_{R_{1}} p(\textbf{x}|ω_{2}) \,dx = \frac{1}{2}[\int_{R_{2}} p(\textbf{x}|ω_{1}) \,dx + \int_{R_{1}} p(\textbf{x}|ω_{2})\,dx]
+\end{equation}\)</span></p>
+<p>O desenvolvimento acima mostra acima mostra que o erro se torna mínimo ao garantir que <span class="math notranslate nohighlight">\(P(ω_{2}|\textbf{x}) &lt; P(ω_{1}|\textbf{x})\)</span>, quando <span class="math notranslate nohighlight">\(\textbf{x}\inω_{1}\)</span>, e <span class="math notranslate nohighlight">\(P(ω_{1}|\textbf{x})&lt; P(ω_{2}|\textbf{x})\)</span>, para <span class="math notranslate nohighlight">\(\textbf{x}\in ω_{2}\)</span>. De fato, ao mover o ponto <span class="math notranslate nohighlight">\(\textbf{x}_{0}\)</span>, conforme apresentada a Figura 2, verifica-se que a região associada à ocorrência de erro de classificação tem sua área aumentada.</p>
+<p><img alt="figura2" src="_images/figura2.jpg" /></p>
+<p>Baseados nas discussões anteriores, voltamos a admitir o espaço de classes <span class="math notranslate nohighlight">\(Ω={ω_{1},...,ω_{c}}\)</span>, de modo que <span class="math notranslate nohighlight">\(\textbf{x}\)</span> está associado a <span class="math notranslate nohighlight">\(ω_{i}\)</span> se <span class="math notranslate nohighlight">\(P(ω_{i}|\textbf{x}) &gt; P(ω_{j}|\textbf{x})\)</span>, para <span class="math notranslate nohighlight">\(i \neq j\)</span> e <span class="math notranslate nohighlight">\(j=1,...c\)</span>. Ainda, a partir dos desenvolvimentos apresentados, é possível associar um risco a cada decisão tomada. Tais casos englobam questões, por exemplo, em que o impacto causado na decisão de <span class="math notranslate nohighlight">\(ω_{1}\)</span>, em vez de <span class="math notranslate nohighlight">\(ω_{2}\)</span>, apresenta maior relevância ao decidir sobre <span class="math notranslate nohighlight">\(ω_{2}\)</span> como alternativa à <span class="math notranslate nohighlight">\(ω_{1}\)</span>.</p>
+<p>Neste contexto, sendo <span class="math notranslate nohighlight">\(R_{i}\)</span> a região do espaço de atributos que induz a classificação em <span class="math notranslate nohighlight">\(ω_{i}\)</span>. Admitindo <span class="math notranslate nohighlight">\(λ_{ki}\)</span> como penalidadde/perda relacionada à escolha equivocada da <span class="math notranslate nohighlight">\(ω_{i}\)</span>, cuja opção correta seria optar pela classe <span class="math notranslate nohighlight">\(ω_{k}\)</span>. Baseado neste conceito, o risco associado à classe <span class="math notranslate nohighlight">\(ω_{k}\)</span> é dado por:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+\sum_{i=1}^{c} λ_{ki} \int_{R_{i}} p(\textbf{x}|ω_{jk})dx; k=1,...c
+\end{equation}\)</span></p>
+<p>A quantidade <span class="math notranslate nohighlight">\(\int_{R_{i}} p(\textbf{x}|ω_{jk})dx\)</span> representa a probabilidade do padrão <span class="math notranslate nohighlight">\(\textbf{x}\)</span>, que, apesar de original da classe <span class="math notranslate nohighlight">\(ω_{k}\)</span>, ocorre na região <span class="math notranslate nohighlight">\(R_{i}\)</span>. Ainda, em um ponto de vista geométrico, <span class="math notranslate nohighlight">\(r_{k}\)</span> proporciona a “área invadida” por <span class="math notranslate nohighlight">\(p(\textbf{x}|ω_{k}\)</span> nas regiões <span class="math notranslate nohighlight">\(R_{i}\)</span>, com <span class="math notranslate nohighlight">\(i=,...c\)</span> e <span class="math notranslate nohighlight">\(i \neq k\)</span>.</p>
+<p>Uma forma de expressar o risco médio de <span class="math notranslate nohighlight">\(r\)</span>, segundo todas as classes, é tomando a combinação linear expressa pleo risco associado a cada classe e sua propagação de ocorrência:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+r = \sum_{k=1}^{c} r_{k}P(ω_{k}) = \sum_{k=1}^{c} [\sum_{i=1}^{c} λ_{ki} \int_{R_{i}} p(\textbf{x}|ω_{k})dx]P(ω_{k}) = \sum_{k=1}^{c} \int_{R_{i}} [\sum_{i=1}^{c} λ_{ki} p(\textbf{x}|ω_{k}) P(ω_{k})]dx
+\end{equation}\)</span></p>
+<p>fazendo <span class="math notranslate nohighlight">\(\sum_{i=1}^{c} λ_{ki} p(\textbf{x}|ω_{k}) P(ω_{k}) = l_{i}\)</span>, temos:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+r = \sum_{k=1}^{c} \int_{R_{i}} l_{i} dx
+\end{equation}\)</span></p>
+<p>A manipulação algébrica realizada proporciona uma reinterpretação que expressa o risco médio em função das regiões <span class="math notranslate nohighlight">\(R_{i}\)</span>. Dessa forma, podemos concluir mais uma vez que a inimização do risco <span class="math notranslate nohighlight">\(r\)</span> é alcançada ao estabelecer cada região <span class="math notranslate nohighlight">\(R_{i}\)</span>, com <span class="math notranslate nohighlight">\(i=1,...c\)</span>, tais que <span class="math notranslate nohighlight">\(l_{i}&lt;l_{j}\)</span>, para <span class="math notranslate nohighlight">\(j=1,...c\)</span> e <span class="math notranslate nohighlight">\(j \neq i\)</span>.</p>
+<p>Vale observar que <span class="math notranslate nohighlight">\(l_{i}\)</span> representa o risco em classificar <span class="math notranslate nohighlight">\(\textbf{x}\)</span> como <span class="math notranslate nohighlight">\(ω_{i}\)</span>, enquanto deveria ser <span class="math notranslate nohighlight">\(ω_{k}\)</span>, para <span class="math notranslate nohighlight">\(k=1,...c\)</span>. Logo,buscamos não confundir as demais classes com <span class="math notranslate nohighlight">\(ω_{i}\)</span>.</p>
+<p>Mais uma vez, e sem perda de generalidade, vamos admitir um problema binário com <span class="math notranslate nohighlight">\(Ω = {ω_{1},ω_{2}}\)</span>. Neste caso, temos as probabilidades <span class="math notranslate nohighlight">\(λ_{11},λ_{21},λ_{12}\)</span> e <span class="math notranslate nohighlight">\(λ_{22}\)</span> e os riscos:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+l_{1} = λ_{11}p(\textbf{x}|ω_{1})P(ω_{1}) + λ_{21}p(\textbf{x}|ω_{2})P(ω_{2})
+\end{equation}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+l_{2} = λ_{12}p(\textbf{x}|ω_{1})P(ω_{1}) + λ_{22}p(\textbf{x}|ω_{2})P(ω_{2})
+\end{equation}\)</span></p>
+<p>Optando pela classe <span class="math notranslate nohighlight">\(ω_{1}\)</span> desde que <span class="math notranslate nohighlight">\(l_{1} &lt; l_{2}\)</span>, é estabelecida a seguinte razão de verossimilhança:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+l_{2} = \frac{p(\textbf{x}|ω_{1})}{p(\textbf{x}|ω_{2})} &gt; \frac {P(ω_{2})λ_{21}-λ_{22}}{P(ω_{2})λ_{12}-λ_{11}}
+\end{equation}\)</span></p>
+<p>De modo análogo, a razão <span class="math notranslate nohighlight">\(l_{21}\)</span> é obtida partindo da condição <span class="math notranslate nohighlight">\(l_{2} &lt; l_{1}\)</span>. Em tempo, simplificando a razão obtida ao caso em que as classes são equiprováveis (i.e., <span class="math notranslate nohighlight">\(P(ω_{1})=P(ω_{2})=\frac{1}{2}\)</span>) e assumindo que não há penalidade ao optar por <span class="math notranslate nohighlight">\(ω_{i}\)</span> quando esta é a classe esperada (i.e., <span class="math notranslate nohighlight">\(λ_{ij}=0\)</span> se <span class="math notranslate nohighlight">\(i=j\)</span>), podemos traçar as seguintes regras de decisão:</p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+(\textbf{x},ω_{1}) \Leftrightarrow  p(\textbf{x}|ω_{1}) &gt; p(\textbf{x}|ω_{2}) \frac{λ_{21}}{λ_{12}}
+\end{equation}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\begin{equation}
+(\textbf{x},ω_{2}) \Leftrightarrow  p(\textbf{x}|ω_{1}) &gt; p(\textbf{x}|ω_{1}) \frac{λ_{12}}{λ_{21}}
+\end{equation}\)</span></p>
+<p>Cabe notar que, ao admitir <span class="math notranslate nohighlight">\(λ_{12} = λ_{21}\)</span>, as regras desenvolvidas recaem no caso de minimização do erro de classificação, abordado anteriormente. Por outro lado, para <span class="math notranslate nohighlight">\(λ_{21} &gt; λ_{12}\)</span>, temos como efeito colateral uma maior tendência sobre a escolha de <span class="math notranslate nohighlight">\(ω_{2}\)</span> em comparação a <span class="math notranslate nohighlight">\(ω_{1}\)</span>. Naturalmente, ao passo que a diferença <span class="math notranslate nohighlight">\(λ_{21} - λ_{12}\)</span> aumenta, maior é a tendenciosidade revelada.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -427,7 +483,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introdução aos padrões de Xamuel</p>
+        <p class="prev-next-title">Introdução à padrões de Xamuel</p>
       </div>
     </a>
     <a class="right-next"
