@@ -155,8 +155,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Introdução ao reconhecimento de Padrões - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Introdução ao reconhecimento de Padrões - Home"/>`);</script>
+    <img src="_static/logobg.png" class="logo__image only-light" alt="Introdução ao reconhecimento de Padrões - Home"/>
+    <script>document.write(`<img src="_static/logobg.png" class="logo__image only-dark" alt="Introdução ao reconhecimento de Padrões - Home"/>`);</script>
   
   
 </a></div>
@@ -409,7 +409,7 @@ P_{erro} = P(\textbf{x} ∈ R_{2},ω_{1}) + P(\textbf{x} ∈ R_{1},ω_{2})
 P_{erro} = P(\textbf{x} ∈ R_{2},ω_{1}) + P(\textbf{x} ∈ R_{1},ω_{2}) = [ \int_{R_{2}} p(\textbf{x}|ω_{1}) \,dx]P(ω_{1}) + [ \int_{R_{1}} p(\textbf{x}|ω_{2}) \,dx]P(ω_{2}) = \frac{1}{2}\int_{R_{2}} p(\textbf{x}|ω_{1}) \,dx + \frac{1}{2}\int_{R_{1}} p(\textbf{x}|ω_{2}) \,dx = \frac{1}{2}[\int_{R_{2}} p(\textbf{x}|ω_{1}) \,dx + \int_{R_{1}} p(\textbf{x}|ω_{2})\,dx]
 \end{equation}\)</span></p>
 <p>O desenvolvimento acima mostra acima mostra que o erro se torna mínimo ao garantir que <span class="math notranslate nohighlight">\(P(ω_{2}|\textbf{x}) &lt; P(ω_{1}|\textbf{x})\)</span>, quando <span class="math notranslate nohighlight">\(\textbf{x}\inω_{1}\)</span>, e <span class="math notranslate nohighlight">\(P(ω_{1}|\textbf{x})&lt; P(ω_{2}|\textbf{x})\)</span>, para <span class="math notranslate nohighlight">\(\textbf{x}\in ω_{2}\)</span>. De fato, ao mover o ponto <span class="math notranslate nohighlight">\(\textbf{x}_{0}\)</span>, conforme apresentada a Figura 2, verifica-se que a região associada à ocorrência de erro de classificação tem sua área aumentada.</p>
-<p><img alt="figura2" src="_images/figura2.jpg" /></p>
+<p><img alt="figura2" src="_images/figura2.png" /></p>
 <p>Baseados nas discussões anteriores, voltamos a admitir o espaço de classes <span class="math notranslate nohighlight">\(Ω={ω_{1},...,ω_{c}}\)</span>, de modo que <span class="math notranslate nohighlight">\(\textbf{x}\)</span> está associado a <span class="math notranslate nohighlight">\(ω_{i}\)</span> se <span class="math notranslate nohighlight">\(P(ω_{i}|\textbf{x}) &gt; P(ω_{j}|\textbf{x})\)</span>, para <span class="math notranslate nohighlight">\(i \neq j\)</span> e <span class="math notranslate nohighlight">\(j=1,...c\)</span>. Ainda, a partir dos desenvolvimentos apresentados, é possível associar um risco a cada decisão tomada. Tais casos englobam questões, por exemplo, em que o impacto causado na decisão de <span class="math notranslate nohighlight">\(ω_{1}\)</span>, em vez de <span class="math notranslate nohighlight">\(ω_{2}\)</span>, apresenta maior relevância ao decidir sobre <span class="math notranslate nohighlight">\(ω_{2}\)</span> como alternativa à <span class="math notranslate nohighlight">\(ω_{1}\)</span>.</p>
 <p>Neste contexto, sendo <span class="math notranslate nohighlight">\(R_{i}\)</span> a região do espaço de atributos que induz a classificação em <span class="math notranslate nohighlight">\(ω_{i}\)</span>. Admitindo <span class="math notranslate nohighlight">\(λ_{ki}\)</span> como penalidadde/perda relacionada à escolha equivocada da <span class="math notranslate nohighlight">\(ω_{i}\)</span>, cuja opção correta seria optar pela classe <span class="math notranslate nohighlight">\(ω_{k}\)</span>. Baseado neste conceito, o risco associado à classe <span class="math notranslate nohighlight">\(ω_{k}\)</span> é dado por:</p>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
