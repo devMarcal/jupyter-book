@@ -3,7 +3,7 @@
 
 title: Introdução ao reconhecimento de Padrões
 author: Vitor Jorge
-logo: logo.png
+logo: images/logobg.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

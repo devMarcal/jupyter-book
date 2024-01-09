@@ -51,7 +51,7 @@ P_{erro} = P(\textbf{x} ∈ R_{2},ω_{1}) + P(\textbf{x} ∈ R_{1},ω_{2}) = [ \
 
 O desenvolvimento acima mostra acima mostra que o erro se torna mínimo ao garantir que $P(ω_{2}|\textbf{x}) < P(ω_{1}|\textbf{x})$, quando $\textbf{x}\inω_{1}$, e $P(ω_{1}|\textbf{x})< P(ω_{2}|\textbf{x})$, para $\textbf{x}\in ω_{2}$. De fato, ao mover o ponto $\textbf{x}_{0}$, conforme apresentada a Figura 2, verifica-se que a região associada à ocorrência de erro de classificação tem sua área aumentada.
 
-![figura2](images/figura2.jpg "figura 2")
+![figura2](images/figura2.png "figura 2")
 
 Baseados nas discussões anteriores, voltamos a admitir o espaço de classes $Ω={ω_{1},...,ω_{c}}$, de modo que $\textbf{x}$ está associado a $ω_{i}$ se $P(ω_{i}|\textbf{x}) > P(ω_{j}|\textbf{x})$, para $i \neq j$ e $j=1,...c$. Ainda, a partir dos desenvolvimentos apresentados, é possível associar um risco a cada decisão tomada. Tais casos englobam questões, por exemplo, em que o impacto causado na decisão de $ω_{1}$, em vez de $ω_{2}$, apresenta maior relevância ao decidir sobre $ω_{2}$ como alternativa à $ω_{1}$.
 
