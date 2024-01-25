@@ -374,7 +374,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-1-teoria-da-decisao-de-bayes">
+  <style>
+    .a {
+        text-align: center;
+    }
+</style>
+<section class="tex2jax_ignore mathjax_ignore" id="capitulo-1-teoria-da-decisao-de-bayes">
 <h1>Capítulo 1: Teoria da decisão de Bayes<a class="headerlink" href="#capitulo-1-teoria-da-decisao-de-bayes" title="Permalink to this heading">#</a></h1>
 <p>A Regra de Bayes, demonstrada na equação 1, é uma equação que relaciona a ocorrência de dois eventos através de suas probabilidades condicionais. Ela é utilizada para calcular a probabilidade de um evento ocorrer, dado que outro evento já ocorreu.</p>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
@@ -399,7 +404,7 @@ document.write(`
 <p>sendo <span class="math notranslate nohighlight">\(p(x) = \sum_{j=1}^{c} p(\textbf{x}|ω_{j})P(ω_{j})\)</span>.</p>
 <p>Uma vez conhecida <span class="math notranslate nohighlight">\(P(ω_{j}|\textbf{x})\)</span>, a classificação de <span class="math notranslate nohighlight">\(\textbf{x}\)</span> segundo <span class="math notranslate nohighlight">\(ω_{j}\)</span>, com <span class="math notranslate nohighlight">\(j=1,...,c\)</span>, torna-se um problema simples.
 Com o objetivo de aprofundar as discussões introduzidas, vamos realizar uma análise sobre o erro cometido ao utilizar a Regra de Bayes no processo de classificação. A fim de favorecer o entendimento, considere um problema de classificação entre apenas duas classes <span class="math notranslate nohighlight">\(ω_{1}\)</span> e <span class="math notranslate nohighlight">\(ω_{2}\)</span> equiprováveis, cujas observações estão definidas sobre o conjunto dos números reais (i.e., <span class="math notranslate nohighlight">\(\textbf{X} ≡ \mathbb{R}\)</span>), o qual é dividido entre as regiões <span class="math notranslate nohighlight">\(R_{1}\)</span> e <span class="math notranslate nohighlight">\(R_{2}\)</span>. Enquanto a região <span class="math notranslate nohighlight">\(R_{1}\)</span> compreende os valores <span class="math notranslate nohighlight">\(\textbf{x}\)</span> tais que <span class="math notranslate nohighlight">\(P(ω_{1}|\textbf{x})&gt;P(ω_{2}|\textbf{x})\)</span>. A Figura 1 ilustra a relação entre as regiões e as probabilidades mencionadas.</p>
-<p><img alt="figura1" src="_images/figura1.jpg" /></p>
+<p><img alt="figura1" src="_images/figura1.jpg" /><legend class=a>Figura 1</legend></p>
 <p>Segundo essas considerações, podemos expressar a probabilidade do erro de classificação por:</p>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
 P_{erro} = P(\textbf{x} ∈ R_{2},ω_{1}) + P(\textbf{x} ∈ R_{1},ω_{2})

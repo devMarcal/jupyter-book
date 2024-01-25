@@ -1,3 +1,9 @@
+<style>
+    .a {
+        text-align: center;
+    }
+</style>
+
 # Capítulo 1: Teoria da decisão de Bayes
 
 
@@ -35,7 +41,8 @@ sendo $p(x) = \sum_{j=1}^{c} p(\textbf{x}|ω_{j})P(ω_{j})$.
 Uma vez conhecida $P(ω_{j}|\textbf{x})$, a classificação de $\textbf{x}$ segundo $ω_{j}$, com $j=1,...,c$, torna-se um problema simples.
 Com o objetivo de aprofundar as discussões introduzidas, vamos realizar uma análise sobre o erro cometido ao utilizar a Regra de Bayes no processo de classificação. A fim de favorecer o entendimento, considere um problema de classificação entre apenas duas classes $ω_{1}$ e $ω_{2}$ equiprováveis, cujas observações estão definidas sobre o conjunto dos números reais (i.e., $\textbf{X} ≡ \mathbb{R}$), o qual é dividido entre as regiões $R_{1}$ e $R_{2}$. Enquanto a região $R_{1}$ compreende os valores $\textbf{x}$ tais que $P(ω_{1}|\textbf{x})>P(ω_{2}|\textbf{x})$. A Figura 1 ilustra a relação entre as regiões e as probabilidades mencionadas.
 
-![figura1](images/figura1.jpg "figura 1")
+
+![figura1](images/figura1.jpg "figura 1")<legend class=a>Figura 1</legend>
 
 Segundo essas considerações, podemos expressar a probabilidade do erro de classificação por:
 
