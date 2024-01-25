@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'linear';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Capítulo 3: Classificadores não lineares" href="nao-linear.html" />
+    <link rel="next" title="2.2 Perceptron" href="linear1.html" />
     <link rel="prev" title="Capítulo 1: Teoria da decisão de Bayes" href="bayes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,7 +173,11 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="first.html">Introdução ao reconhecimento de padrões</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bayes.html">Capítulo 1: Teoria da decisão de Bayes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 2: Classificadores lineares</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Capítulo 2: Classificadores lineares</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="linear1.html">2.2 Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear2.html">2.3 Estimativa baseada na soma dos erros quadráticos</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="nao-linear.html">Capítulo 3: Classificadores não lineares</a></li>
 <li class="toctree-l1"><a class="reference internal" href="combinacao.html">Capítulo 4: Combinação de classificadores</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agrupamento.html">Capítulo 5: Métodos de agrupamento</a></li>
@@ -384,38 +388,59 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-2-classificadores-lineares">
+  <style>
+    main {
+        text-align: justify;
+    }
+    legend {
+        font-size: 16px;
+    }
+</style>
+<section class="tex2jax_ignore mathjax_ignore" id="capitulo-2-classificadores-lineares">
 <h1>Capítulo 2: Classificadores lineares<a class="headerlink" href="#capitulo-2-classificadores-lineares" title="Permalink to this heading">#</a></h1>
 <p>Os classificadores lineares compartilham o conceito de separação entre classes através de funções discriminantes expressas como combinação linear entre coeficientes (pesos) e as características dos padrões. A determinação desses coeficientes segundo cada método encontrado na literatura segue um processo particularm porém com o objetivo final de alcançar a melhor configuração possível. Cabe destacar que parte dos métodos lineares abordados aqui abrem caminho para a formalização de determinados métodos não lineares.</p>
 <section id="classificadores-e-problemas-lineares">
 <h2>Classificadores e problemas lineares<a class="headerlink" href="#classificadores-e-problemas-lineares" title="Permalink to this heading">#</a></h2>
 <p>Da forma mais simplista possível, podemos definir que um classificador é linear desde que o processo de discriminação das classes abrangidas pelo problema seja conduzida através de superfícies de decisão lineares. Uma superfície de decisão linear consiste no lugar geométrico que torna nula uma função discriminante linear. Geralemente, uma função linear é dada por:</p>
+<div align=center>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
-g(\textbf{x})=\textbf{w}^{T}\textbf{x} + 𝜔_{0}
-\end{equation}\)</span></p>
+g(\textbf{x})=\textbf{w}^{T}\textbf{x} + 𝜔_{0} \tag{2.1}
+\end{equation}\)</span> </div></p>
 <p>em que <span class="math notranslate nohighlight">\(\textbf{x}\)</span>, <span class="math notranslate nohighlight">\(\textbf{w} \in \chi ⊆ \mathbb{R}^{n} \)</span> e <span class="math notranslate nohighlight">\(𝜔_{0} \in \mathbb{R}\)</span>. Cabe observar que a expansão de <span class="math notranslate nohighlight">\(\textbf{w}^{T}\textbf{x} + 𝜔_{0}\)</span> gera uma combinação linear, e ainda, <span class="math notranslate nohighlight">\(\textbf{w}^{T}\textbf{x}\)</span> corresponde ao produto interno entre <span class="math notranslate nohighlight">\(\textbf{w}\)</span> e <span class="math notranslate nohighlight">\(\textbf{x}^{1}\)</span>.</p>
 <p>A fim de exibir determinadas características e relações relevantes a respeito das superfícies de decisão geradas por <span class="math notranslate nohighlight">\(g(\textbf{x})\)</span>, vamos considerar <span class="math notranslate nohighlight">\(\mathbb{R}^{2}\)</span> como espaço de atributos. Por sua vez, com o intuito de reforçar o entendimento, a Figura 3 apoia esta discussão.</p>
+<div align="center">
+<p><img alt="figura21" src="_images/lineares_figura21.png" /> <legend>Características de uma superfície de decisão linear.</p>
+</legend> </div>
 <p>Como mencionado, a superfície de decisão corresponde a um subconjunto de vetores <span class="math notranslate nohighlight">\(\textbf{x}\)</span> no espaço de atributos que torna <span class="math notranslate nohighlight">\(g(\textbf{x})=0\)</span>. Ao tomar <span class="math notranslate nohighlight">\(\textbf{x}_{1}\)</span> e <span class="math notranslate nohighlight">\(\textbf{x}_{2}\)</span> sobre a superfície de decisão, verificamos que:</p>
+<div align=center>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
 \textbf{w}^{T}\textbf{x} + 𝜔_{0} = \textbf{w}^{T}\textbf{x}_{2} + 𝜔_{0} \Leftrightarrow \textbf{w}^{T}(\textbf{x}_{1}-\textbf{x}_{2})=0
-\end{equation}\)</span></p>
+\end{equation}\)</span> </div></p>
 <p>levando a concluir que <span class="math notranslate nohighlight">\(\textbf{w}\)</span> é ortogonal à superfície de decisão linear, pois <span class="math notranslate nohighlight">\(\textbf{x}_{1}-\textbf{x}_{2}\)</span> pode ser admitindo como um vetor que determina a superfície de decisão (neste caso, uma reta), e a ortogonalidade mencionada decorre do produto interno nulo entre <span class="math notranslate nohighlight">\(\textbf{w}\)</span> e o vetor <span class="math notranslate nohighlight">\(\textbf{x}_{1}-\textbf{x}_{2}\)</span>.</p>
 <p>Considerando agora outros dois vetores <span class="math notranslate nohighlight">\(\textbf{x}_{3}=(x_{31},0)\)</span> e <span class="math notranslate nohighlight">\(\textbf{x}_{4}=(0,x_{42})\)</span> que também ocupam a superfície de decisão, salvo detalhe que <span class="math notranslate nohighlight">\(\textbf{x}_{3}\)</span> e <span class="math notranslate nohighlight">\(\textbf{x}_{4}\)</span> interceptam o primeiro e segundo eixo do espaço de atributos, respectivamente. Com isso:</p>
+<div align=center>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
 g(\textbf{x}_{3})=\textbf{w}^{T}\textbf{x}_{3} + 𝜔_{0} = 0 \Rightarrow 𝜔_{1}x_{31} + 𝜔_{2}0 + 𝜔_{0} = x_{31} = -\frac{𝜔_{0}}{𝜔_{1}}
-\end{equation}\)</span></p>
+\end{equation}\)</span> </div></p>
+<div align=center>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
 g(\textbf{x}_{3})=\textbf{w}^{T}\textbf{x}_{4} + 𝜔_{0} = 0 \Rightarrow 𝜔_{1}0 + 𝜔_{2}x_{42} + 𝜔_{0} = x_{42} = -\frac{𝜔_{0}}{𝜔_{2}}
-\end{equation}\)</span></p>
+\end{equation}\)</span> </div></p>
 <p>Esse resultado nos permite concluir que a distância entre a superfície de decisão e a origem do espaço de atributos equivale a <span class="math notranslate nohighlight">\(\frac{|𝜔_{0}|}{||\textbf{w}||}\)</span>. Ainda, com base no mesmo conceito de distância entre ponto e reta, podemos concluir que o módulo de <span class="math notranslate nohighlight">\(g(\textbf{x})\)</span> expressa a distância entre <span class="math notranslate nohighlight">\(\textbf{x}\)</span> e a superfície de decisão.</p>
 <p>Além da noção de distância entre os padrões/vetores e a superfície de decisão, é de extrema importância o valor do retorno gerado pela função discriminante. Ao tomar um <span class="math notranslate nohighlight">\(\textbf{x}\)</span> qualquer, tal que <span class="math notranslate nohighlight">\(g(\textbf{x}) &gt; 0\)</span>, podemos concluir que tal vetor está afastado da superfície <span class="math notranslate nohighlight">\(g(\textbf{x})=0\)</span> no mesmo sentido do vetor <span class="math notranslate nohighlight">\(\textbf{w}\)</span>. De forme similar, <span class="math notranslate nohighlight">\(g(\textbf{x}) &lt; 0\)</span> indica que o vetor ortogonal à superfície de decisão com extremidade em <span class="math notranslate nohighlight">\(\textbf{x}\)</span> possui sentido oposto a <span class="math notranslate nohighlight">\(\textbf{w}\)</span>. Esta observação a respeito do sinal de <span class="math notranslate nohighlight">\(g(\textbf{x})\)</span> caracteriza a regra de decisão de um classificador linear, usualmente expressa por:</p>
+<div align=center>
 <p><span class="math notranslate nohighlight">\(\begin{equation}
-g(\textbf{x})=\textbf{w}^{T}\textbf{x} + 𝜔_{0}  \left \{ \begin{matrix} &gt;0 ⇒ \textbf{x} \in 𝜔_{1} \\ &lt; 0 ⇒ \textbf{x} \in 𝜔_{2} \end{matrix} \right.
-\end{equation}\)</span></p>
+g(\textbf{x})=\textbf{w}^{T}\textbf{x} + 𝜔_{0}  \left \{ \begin{matrix} &gt;0 ⇒ \textbf{x} \in 𝜔_{1} \\ &lt; 0 ⇒ \textbf{x} \in 𝜔_{2} \end{matrix} \right. \tag{2.2}
+\end{equation}\)</span> </div></p>
 <p>De acordo com a equação acima, verifica-se que um classificador linear possibilita a distinção entre duas classes somente. A aplicabilidade desta abordagem em problemas de classificação que abrangem mais de duas classes exige o uso de estratégias, as quais serão introduzidas mais adiante.</p>
 <p>Nesta breve introdução sobre classificadores lineares, podemos notar a grande diferença conceitual existente entre esta abordagem e as regras de classifiação baseadas na Teoria da Decisão de Bayes. A simplicidade conceitual e maior facilidade no tratamento computacional tornam atrativos os classificadores lineares.</p>
-<p>Antes de prosseguir os estudos sobre os classificadores lineares, é importante destacarmos a diferença entre classificadores lineares e problemas linearmente separáveis. Conforme já definido, os classificadores lineares são estruturados segundo funções discriminantes com forma equivalente à apresentada na Equação 2.1. Por outro lado, um problema de classificação é linearmente separável desde que seja possível obter, ao menos, uma superfície de decisão linear que distinguia dois tipos de objetos cujas classes sejam conhecidas de antemão (Figura 4). Isso nos permite concluir que a capacidade de separação através de uma superfície linear é uma propriedade dos dados a serem classificados e não do classificador em si.</p>
+<p>Antes de prosseguir os estudos sobre os classificadores lineares, é importante destacarmos a diferença entre classificadores lineares e problemas linearmente separáveis. Conforme já definido, os classificadores lineares são estruturados segundo funções discriminantes com forma equivalente à apresentada na Equação 2.1. Por outro lado, um problema de classificação é linearmente separável desde que seja possível obter, ao menos, uma superfície de decisão linear que distinguia dois tipos de objetos cujas classes sejam conhecidas de antemão (Figura 2.2). Isso nos permite concluir que a capacidade de separação através de uma superfície linear é uma propriedade dos dados a serem classificados e não do classificador em si.</p>
+<div align="center"> 
+<p><img alt="figura21" src="_images/lineares_figura22.png" /> <legend>Exemplos de casos de separabilidade. Para dados linearmente separáveis, é garantida a existência de uma superfície linear capaz de particionar o espaço de atributos em dois subconjuntos de classes distintas. O mesmo não é garantido para o caso não linearmente separável.</p>
+</legend> </div>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -458,11 +483,11 @@ g(\textbf{x})=\textbf{w}^{T}\textbf{x} + 𝜔_{0}  \left \{ \begin{matrix} &gt;0
       </div>
     </a>
     <a class="right-next"
-       href="nao-linear.html"
+       href="linear1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Capítulo 3: Classificadores não lineares</p>
+        <p class="prev-next-title">2.2 Perceptron</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
