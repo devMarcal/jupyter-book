@@ -51,7 +51,7 @@ Com o objetivo de aprofundar as discussões introduzidas, vamos realizar uma an�
 
 <div align="center"> 
     
-![figura1](images/figura1.jpg "figura 1") <legend class=a>Regiões de decisão e de erro de classificação.
+![figura1](images/figura1.jpg "figura 1") <legend>Figura 1.1 - Regiões de decisão e de erro de classificação.
 </legend>
 </div>
 
@@ -75,7 +75,7 @@ O desenvolvimento acima mostra acima mostra que o erro se torna mínimo ao garan
 
 <div align="center">
 
-![figura2](images/figura2.png "figura 2")<legend>Noção de erro dada a alteração sobre as regiões de decisão.
+![figura2](images/figura2.png "figura 2")<legend>Figura 1.2 - Noção de erro dada a alteração sobre as regiões de decisão.
 </legend>
 </div>
 

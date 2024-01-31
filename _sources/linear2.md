@@ -1,3 +1,12 @@
+<style>
+    main {
+        text-align: justify;
+    }
+    legend {
+        font-size: 16px;
+    }
+</style>
+
 # 2.3 Estimativa baseada na soma dos erros quadráticos
 
 Uma alternativa de classificador linear é modelada com base no conceito de soma dos erros quadráticos (SSE - $\textit{Sum of Squared Errors}$). De forma análoga ao Perceptron, iniciamos com a suposição de disponibilidade de $D = \{(\textbf{x}_{i},y_{i}) \in \textit{X} \times \textit{Y}: i=1,...,m\}$ e que o processo de aprendizado é verificado com base nos valores retornados por $J(\textbf{w})$, sendo $\textbf{w} = [ω_{0},ω_{1},...,ω_{n}]^{T}$ o vetor que parametriza a função e superfície de decisão linear. Nesta abordagem, tal função é definida por:
@@ -22,9 +31,9 @@ $\begin{equation}
 \textbf{w} = \textbf{A}^{-1}\textbf{b} \tag{2.10}
 \end{equation}$ </div>
 
-O uso desta técnica implica em resultados similares aos proporcionados pelo algoritmo Perceptron associado à estratégia de relaxamento. A Figura 2.7 demonstra este comportamento esperado.
+O uso desta técnica implica em resultados similares aos proporcionados pelo algoritmo Perceptron associado à estratégia de relaxamento.
 
-figura 2.7
+-
 
 ```
 #Implementação de função para cálculo de w segundo o método SSE

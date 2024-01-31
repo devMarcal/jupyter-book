@@ -24,11 +24,11 @@ g(\textbf{x})=\textbf{w}^{T}\textbf{x} + 𝜔_{0} \tag{2.1}
 
 em que $\textbf{x}$, $\textbf{w} \in \chi ⊆ \mathbb{R}^{n} $ e $𝜔_{0} \in \mathbb{R}$. Cabe observar que a expansão de $\textbf{w}^{T}\textbf{x} + 𝜔_{0}$ gera uma combinação linear, e ainda, $\textbf{w}^{T}\textbf{x}$ corresponde ao produto interno entre $\textbf{w}$ e $\textbf{x}^{1}$.
 
-A fim de exibir determinadas características e relações relevantes a respeito das superfícies de decisão geradas por $g(\textbf{x})$, vamos considerar $\mathbb{R}^{2}$ como espaço de atributos. Por sua vez, com o intuito de reforçar o entendimento, a Figura 3 apoia esta discussão.
+A fim de exibir determinadas características e relações relevantes a respeito das superfícies de decisão geradas por $g(\textbf{x})$, vamos considerar $\mathbb{R}^{2}$ como espaço de atributos. Por sua vez, com o intuito de reforçar o entendimento, a Figura 2.1 apoia esta discussão.
 
 <div align="center">
 
-![figura21](images/lineares_figura21.png "figura 2.1") <legend>Características de uma superfície de decisão linear.
+![figura21](images/lineares_figura22.png "figura 2.1") <legend>Figura 2.1 - Características de uma superfície de decisão linear.
 </legend> </div>
 
 Como mencionado, a superfície de decisão corresponde a um subconjunto de vetores $\textbf{x}$ no espaço de atributos que torna $g(\textbf{x})=0$. Ao tomar $\textbf{x}_{1}$ e $\textbf{x}_{2}$ sobre a superfície de decisão, verificamos que:
@@ -73,5 +73,5 @@ Antes de prosseguir os estudos sobre os classificadores lineares, é importante 
 
 <div align="center"> 
 
-![figura21](images/lineares_figura22.png "figura 2.2") <legend>Exemplos de casos de separabilidade. Para dados linearmente separáveis, é garantida a existência de uma superfície linear capaz de particionar o espaço de atributos em dois subconjuntos de classes distintas. O mesmo não é garantido para o caso não linearmente separável.
+![figura21](images/lineares_figura21.png "figura 2.2") <legend>Figura 2.2 - Exemplos de casos de separabilidade. Para dados linearmente separáveis, é garantida a existência de uma superfície linear capaz de particionar o espaço de atributos em dois subconjuntos de classes distintas. O mesmo não é garantido para o caso não linearmente separável.
 </legend> </div>

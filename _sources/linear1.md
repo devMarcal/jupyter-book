@@ -9,11 +9,11 @@
 
 # 2.2 Perceptron
 
-A representação genérica do Perceptron, inspirada no modelo de neurônio proposto por Warren McCulloch e Walter Pitts [McCulloch and Pitts, 1943], é ilustrada na Figura 5. Segundo esta representação, podemos observar cico elementos básicos: (i) à esquerda, uma camada composta por $n$ receptores, responsáveis por receber as informações sinápticas $x_{1}...,x_{n}$; (ii) um conjunto de conexões sinápticas, que pondera as informações de entrada segundo os pesos $w_{1}...,w_{n}$; (iii) uma entrada constante e igual a +1, ponderada por $w_{0}$; (iv) no núcleo do neurônio, um concentrador (i.e., uma soma $∑$) dis sinais de entrada que induz um campo sináptico e repassa para; (v) a função de ativação $g$, a qual é responsável por gerar uma resposta.
+A representação genérica do Perceptron, inspirada no modelo de neurônio proposto por Warren McCulloch e Walter Pitts [McCulloch and Pitts, 1943], é ilustrada na Figura 2.3. Segundo esta representação, podemos observar cico elementos básicos: (i) à esquerda, uma camada composta por $n$ receptores, responsáveis por receber as informações sinápticas $x_{1}...,x_{n}$; (ii) um conjunto de conexões sinápticas, que pondera as informações de entrada segundo os pesos $w_{1}...,w_{n}$; (iii) uma entrada constante e igual a +1, ponderada por $w_{0}$; (iv) no núcleo do neurônio, um concentrador (i.e., uma soma $∑$) dis sinais de entrada que induz um campo sináptico e repassa para; (v) a função de ativação $g$, a qual é responsável por gerar uma resposta.
 
 <div align="center">
 
-![figura1](images/perceptron23.png "figura 25") <legend>O modelo Perceptron.</legend> </div>
+![figura1](images/perceptron23.png "figura 25") <legend>Figura 2.3 - O modelo Perceptron.</legend> </div>
 
 
 Com base nos elementos do modelo introduzidos, é formalizado um método capaz de realizar classificação de realizar classificação de padrões. Para tal, considere um problema linearmente separável que envolve duas classes e no qual é conhecido um conjunto de observações $D = \{(\textbf{x}_{i},y_{i})\in \textit{X} \times \textit{Y}:i=1,...,m\}$. Segundo esta notação, temos que $\textbf{x}_{i}$ está associado exclusimamente à $𝜔_{1}$ ou $𝜔_{2}$ quando $y_{i}$ equivale a +1 ou -1, respectivamente.
@@ -60,11 +60,11 @@ Após um número finito de iterações, o algortimo Perceptron deve convergir. C
 
 Como consequência do comportamento de $δ(\cdot;\cdot)$, a função objetivo que caracteriza o treinamento do Perceptron torna-se linear por partes. Este comportamento possibilita que diferentes configurações de valores (i.e., pares da região central) de pesos sinápticos proporcionem a minimização de função objetivo.
 
-A Figura 2.5 apresenta a aplicação do algoritmo Perceptron sobre um conjunto de dados linearmente separáveis. As superfícies de decisão obtidas ao longo das iterações são identificadas pelas retas em tons claros no gráfico da esquerda, para as quais é observado um movimento de convergência em direção a uma solução. O resultado final de separação é apresentado no gráfico da direita.
+A Figura 2.4 apresenta a aplicação do algoritmo Perceptron sobre um conjunto de dados linearmente separáveis. As superfícies de decisão obtidas ao longo das iterações são identificadas pelas retas em tons claros no gráfico da esquerda, para as quais é observado um movimento de convergência em direção a uma solução. O resultado final de separação é apresentado no gráfico da direita.
 
 <div align="center">
 
-![figura1](images/perceptron24.png "figura 26") <legend>Processo de ajuste da superfície de decisão pelo algoritmo Perceptron (esquerda) e separação final dos dados (direita).
+![figura1](images/perceptron24.png "figura 26") <legend>Figura 2.4 - Processo de ajuste da superfície de decisão pelo algoritmo Perceptron (esquerda) e separação final dos dados (direita).
 </legend> </div>
 
 Uma implementação do método Perceptron, segundo os elementos introduzidos nesta seção, é dada pela função $\mathbb{perceptron}$ apresentada no Código 2.1. Nesta implementação, são verificadas outras duas funções $\mathbb{eta\_update}$ e $\mathbb{delta\_check}$, responsáveis pela atualização da taxa de aprendizado e pelo cálculo de $δ(\cdot;\textbf{w})$. Ainda, uma vez obtido $\textbf{w}$, a predição do indicador de classe (i.e., +1 ou -1) pode ser efetuada com uso da função ($\mathbb{predictor\_perceptron}$). Tais funções estão contidas no Código 2.2.
@@ -147,7 +147,11 @@ def perceptron_predict(x,w):
 
 Nesta proposta, a atualização de $\textbf{w}^{(k+1)}$ ocorre somente quando a função $δ(\textbf{x}_{i};\textbf{w}^{(k)})$, diante da parametrização atual representada por $\textbf{w}^{(k)}$, identifica um erro de classificação, já que a parcela $η_{k}δ(\textbf{x}_{i};\textbf{w}^{(k)})$ se torna nula diante das classes apresentadas sucessivamente através de ciclos. Com relação à inicialização $\textbf{w}^{(0)}$ e atualização de $η_{k}$, podem ser adotados os mesmos critérios antes discutidos.
 
-Analogamente à seção anterior, a Figura 3.6 apresenta o processo de obtenção da superfície de decisão através do algoritmo Perceptron, porém atualizado de forma sequencial. Em comparação com a versão anterior, nota-se um menor número de iterações exigidas, pois há uma menor concentração de superfícies testadas (representadas pelas linhas claras e finas). No entanto, é válido ressaltar que este é um comportamento que pode estar relacionado à disposição dos padrões.
+Analogamente à seção anterior, a Figura 2.5 apresenta o processo de obtenção da superfície de decisão através do algoritmo Perceptron, porém atualizado de forma sequencial. Em comparação com a versão anterior, nota-se um menor número de iterações exigidas, pois há uma menor concentração de superfícies testadas (representadas pelas linhas claras e finas). No entanto, é válido ressaltar que este é um comportamento que pode estar relacionado à disposição dos padrões.
+
+<div align="center">
+
+![figura1](images/perceptron25.png "figura 26") <legend>Figura 2.5 - Processo de ajuste da  superfície de decisão pelo algoritmo Perceptron, baseado em ajustes sequenciais (esquerda) e separação final dos dados (direita).</legend> </div>
 
 ## Aplicação sobre dados não linearmente separáveis
 
@@ -177,8 +181,8 @@ $\textbf{w}^{(k+1)} - η_{k}δ(\textbf{x}_{i};\textbf{w}_{(k)})$
 
 Atualize k $←$ k + 1 </div>
 
-O desempenho desta estratégia é verificado através da aplicação mostrada na Figura 2.7. Para dados linearmente separáveis, tal estratégia é reduzida à versão original do algoritmo. Por outro lado, na condição de dados não linearmente separáveis, o algoritmo termina ao atingir um número máximo de iterações, e a solução é dada pela configuração de $\textbf{w}$ qye proporciona maior acurácia entre todos os testes efetuados.
+O desempenho desta estratégia é verificado através da aplicação mostrada na Figura 2.6. Para dados linearmente separáveis, tal estratégia é reduzida à versão original do algoritmo. Por outro lado, na condição de dados não linearmente separáveis, o algoritmo termina ao atingir um número máximo de iterações, e a solução é dada pela configuração de $\textbf{w}$ que proporciona maior acurácia entre todos os testes efetuados.
 
 <div align="center">
 
-![figura1](images/perceptron25.png "figura 26") <legend>Processo de ajuste da  superfície de decisão pelo algoritmo Perceptron, baseado em ajustes sequenciais (esquerda) e separação final dos dados (direita).</legend> </div>
+![figura6](images/figura26.png "figura2.6") <legend> Figura 2.6 - Aplicação do algoritmo Perceptron, baseado na estratégia de relaxamento, sobre dados (a) linearmente separáveis e (b) não linearmente separáveis..</legend> </div>

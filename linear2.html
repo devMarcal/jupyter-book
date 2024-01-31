@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'linear2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Capítulo 3: Classificadores não lineares" href="nao-linear.html" />
+    <link rel="next" title="2.4 Máquina de vetores de suporte (SVM) - versão linear" href="linear3.html" />
     <link rel="prev" title="2.2 Perceptron" href="linear1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -176,6 +176,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="linear.html">Capítulo 2: Classificadores lineares</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="linear1.html">2.2 Perceptron</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3 Estimativa baseada na soma dos erros quadráticos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear3.html">2.4 Máquina de vetores de suporte (SVM) - versão linear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear4.html">2.5 Estratétegias Multiclasse</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="nao-linear.html">Capítulo 3: Classificadores não lineares</a></li>
@@ -378,7 +380,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="estimativa-baseada-na-soma-dos-erros-quadraticos">
+  <style>
+    main {
+        text-align: justify;
+    }
+    legend {
+        font-size: 16px;
+    }
+</style>
+<section class="tex2jax_ignore mathjax_ignore" id="estimativa-baseada-na-soma-dos-erros-quadraticos">
 <h1>2.3 Estimativa baseada na soma dos erros quadráticos<a class="headerlink" href="#estimativa-baseada-na-soma-dos-erros-quadraticos" title="Permalink to this heading">#</a></h1>
 <p>Uma alternativa de classificador linear é modelada com base no conceito de soma dos erros quadráticos (SSE - <span class="math notranslate nohighlight">\(\textit{Sum of Squared Errors}\)</span>). De forma análoga ao Perceptron, iniciamos com a suposição de disponibilidade de <span class="math notranslate nohighlight">\(D = \{(\textbf{x}_{i},y_{i}) \in \textit{X} \times \textit{Y}: i=1,...,m\}\)</span> e que o processo de aprendizado é verificado com base nos valores retornados por <span class="math notranslate nohighlight">\(J(\textbf{w})\)</span>, sendo <span class="math notranslate nohighlight">\(\textbf{w} = [ω_{0},ω_{1},...,ω_{n}]^{T}\)</span> o vetor que parametriza a função e superfície de decisão linear. Nesta abordagem, tal função é definida por:</p>
 <div align="center">
@@ -394,8 +404,10 @@ document.write(`
 <p><span class="math notranslate nohighlight">\(\begin{equation}
 \textbf{w} = \textbf{A}^{-1}\textbf{b} \tag{2.10}
 \end{equation}\)</span> </div></p>
-<p>O uso desta técnica implica em resultados similares aos proporcionados pelo algoritmo Perceptron associado à estratégia de relaxamento. A Figura 2.7 demonstra este comportamento esperado.</p>
-<p>figura 2.7</p>
+<p>O uso desta técnica implica em resultados similares aos proporcionados pelo algoritmo Perceptron associado à estratégia de relaxamento.</p>
+<ul class="simple">
+<li></li>
+</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Implementação de função para cálculo de w segundo o método SSE</span>
 
 <span class="k">def</span> <span class="nf">SSE</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
@@ -460,11 +472,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="nao-linear.html"
+       href="linear3.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Capítulo 3: Classificadores não lineares</p>
+        <p class="prev-next-title">2.4 Máquina de vetores de suporte (SVM) - versão linear</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
