@@ -4,9 +4,14 @@
 format: jb-book
 root: introduction
 chapters:
-  - file: first
+  - file: reconhecimento
   - file: bayes
-  - file: linear
+  - file: classificadores-lineares
+    sections:
+        - file: perceptron
+        - file: estimativa
+        - file: svm
+        - file: multiclasse
   - file: nao-linear
   - file: combinacao
   - file: agrupamento
