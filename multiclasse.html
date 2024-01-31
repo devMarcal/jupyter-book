@@ -7,8 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Introdução ao reconhecimento de Padrões</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>2.5 Estratétegias Multiclasse &#8212; Introdução ao reconhecimento de Padrões</title>
   
   
   
@@ -61,9 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
-    <link rel="index" title="Index" href="#" />
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'multiclasse';</script>
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Capítulo 3: Classificadores não lineares" href="nao-linear.html" />
+    <link rel="prev" title="2.4 Máquina de vetores de suporte (SVM) - versão linear" href="svm.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,14 +170,14 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="reconhecimento.html">Introdução ao reconhecimento de padrões</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bayes.html">Capítulo 1: Teoria da decisão de Bayes</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="classificadores-lineares.html">Capítulo 2: Classificadores lineares</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="classificadores-lineares.html">Capítulo 2: Classificadores lineares</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="perceptron.html">2.2 Perceptron</a></li>
 <li class="toctree-l2"><a class="reference internal" href="estimativa.html">2.3 Estimativa baseada na soma dos erros quadráticos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="svm.html">2.4 Máquina de vetores de suporte (SVM) - versão linear</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multiclasse.html">2.5 Estratétegias Multiclasse</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.5 Estratétegias Multiclasse</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="nao-linear.html">Capítulo 3: Classificadores não lineares</a></li>
@@ -249,7 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmulticlasse.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -261,6 +266,54 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Open issue</span>
 </a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/multiclasse.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
 </li>
       
   </ul>
@@ -313,7 +366,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>2.5 Estratétegias Multiclasse</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -327,13 +380,49 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <style>
+    legend {
+        font-size: 16px;
+    }
+    main {
+        text-align: justify;
+    }
+</style>
+<section class="tex2jax_ignore mathjax_ignore" id="estratetegias-multiclasse">
+<h1>2.5 Estratétegias Multiclasse<a class="headerlink" href="#estratetegias-multiclasse" title="Permalink to this heading">#</a></h1>
+<p>De acordo com as formalizações apresentadas nas seções anteriores, o processo de classificação é realizado em relação a apenas duas classes. No entanto, os problemas práticos usualmente abrangem a separação entre um número maior de classes. Para contornar essa situação, são empregadas as estratégias multiclasse.</p>
+<p>Existem dois tipos de estratégias multiclasse, as que decompõem o problema em subproblemas binários e as que reformulam os métodos em si. A decomposição em subproblemas mostra-se a mais intuitiva e simples. Entre as diferentes propostas baseadas na ideia de decomposição, as estratégias Um-Versus-Restante (<span class="math notranslate nohighlight">\(\textit{One-Versus-Rest}\)</span> - OVR) e Um-Versus-Um (<span class="math notranslate nohighlight">\(\textit{One-Versus-One}\)</span> - OVO) são comuns.</p>
+<p>Em relação à estratégia OVR, supondo um problema de classificação que envolve <span class="math notranslate nohighlight">\(c\)</span> classes, são definidos <span class="math notranslate nohighlight">\(c\)</span> classificadores binários. Cada classificador é responsável pela separação de um classe específica em relação às demais. A classe de um padrão é determinada pelo classificador binário que é capaz de discriminá-lo corretamente e proporcionar a maior distância possível à superfície de decisão (ou hiperplano de separação). Conforme já foi discutido, a distância entre um dado padrão <span class="math notranslate nohighlight">\(\textbf{x}_{i}\)</span> e asuperfície/hiperplano de decisão <span class="math notranslate nohighlight">\(g(\textbf{x})=0\)</span> é obtida por <span class="math notranslate nohighlight">\(|g(\textbf{x})|\)</span>.</p>
+<p>Por outro lado, em consideração à estratégia OVO, para o mesmo problema de classificação envolvendo <span class="math notranslate nohighlight">\(c\)</span> classes, são definidos <span class="math notranslate nohighlight">\(c(c-1)/2\)</span> (i.e., o número de combinações geradas por <span class="math notranslate nohighlight">\(c\)</span> elementos tomados dois a dois) classificadores binários, sendo cada um deles responsável pela separação de padrões de determinado par de classes. Dessa maneira, um padrão pode ser classificado com relação a uma mesma classe diversas vezes. Por sua vez, a classificação final de um padrão é dada pela maior frequência observada com que ele é associado a uma determinada classe.</p>
+<p>A Figura 2.11 ilustra o uso das estratégias OVR e OVO em um problema de classificação envolvendo 3 classes (<span class="math notranslate nohighlight">\(Ω={\circ,◇,△}\)</span>). A notação <span class="math notranslate nohighlight">\(g_{A/B}\)</span> define que o hiperplano <span class="math notranslate nohighlight">\(g\)</span> realiza a separação entre os conjutos <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span>. Na estratégia OVR, o padrão <span class="math notranslate nohighlight">\(♣\)</span> pertence à classe composta por elementos <span class="math notranslate nohighlight">\(∘\)</span> devido à  maior distância (perpendicular) em relação ao hiperplano <span class="math notranslate nohighlight">\(g{\circ/Ω-\{\circ\}}\)</span>. Embora o padrão apresente maior distância quanto ao hiperplano <span class="math notranslate nohighlight">\(g{◇/Ω-\{◇\}}\)</span> e pertença à classe <span class="math notranslate nohighlight">\(Ω-\{◇\}\)</span>, não é possível determinar se este padrão pertence se este padrão pertence a classe <span class="math notranslate nohighlight">\(\circ\)</span> ou <span class="math notranslate nohighlight">\(△\)</span>. Na estratégia OVO, o padrão <span class="math notranslate nohighlight">\(♣\)</span> é classificado novamente segundo a classe <span class="math notranslate nohighlight">\(∘\)</span>, pois, entre os três casos binários analisados (<span class="math notranslate nohighlight">\(g_{∘/◇}\)</span>,<span class="math notranslate nohighlight">\(g_{△/◇}\)</span> e <span class="math notranslate nohighlight">\(g_{∘/△}\)</span>), ele foi associado à classe <span class="math notranslate nohighlight">\(\circ\)</span> duas vezes, em <span class="math notranslate nohighlight">\(g_{∘/◇}\)</span> e <span class="math notranslate nohighlight">\(g_{∘/△}\)</span>.</p>
+<div align="center">   
+<p><img alt="figura11" src="_images/figura211.png" /> <legend>Figura 2.11 - Aplicação das estratégias multiclasse OVR e OVO em um problema de separação de 3 classes.</legend> </div></p>
+<p>A Figura 2.12 ilustra as regiões de decisão obtidas pelos métodos SSE e SVM (linear e com <span class="math notranslate nohighlight">\(C=100\)</span>). Apesar de definir regiões similares, nota-se o melhor posicionamento das superfícies de decisão geradas pelo método SVM.</p>
+<p>Figura 2.12 <div align="center"></p>
+<p><img alt="figura" src="images/figura.jpg" /> <legend></legend></p>
 </div>
+<p>O Código 2.5 apresenta uma implementação que permite a aplicação de método SSE sobre um problema multiclasses com uso da estratégia OVR. Os argumentos da função <span class="math notranslate nohighlight">\(\textbf{muliclass_ovr_sse}\)</span> correspondem aos padrões (<span class="math notranslate nohighlight">\(\textbf{X_train}\)</span>) e rótulos (<span class="math notranslate nohighlight">\(\textbf{Y_train}\)</span>) de treinamento, seguido por um <span class="math notranslate nohighlight">\(\textbf{array}\)</span> de padrões a ser classificado (<span class="math notranslate nohighlight">\(\textbf{Y_test}\)</span>). Com relação ao método SVM, o mesmo pode ser obtido com inclusão de <span class="math notranslate nohighlight">\(\textbf{decision_function_shape='ovr'}\)</span> durante a sua instanciação.</p>
+</section>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -345,6 +434,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="svm.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2.4 Máquina de vetores de suporte (SVM) - versão linear</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="nao-linear.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Capítulo 3: Classificadores não lineares</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
