@@ -19,15 +19,15 @@ Por outro lado, em consideração à estratégia OVO, para o mesmo problema de c
 
 A Figura 2.11 ilustra o uso das estratégias OVR e OVO em um problema de classificação envolvendo 3 classes ($Ω={\circ,◇,△}$). A notação $g_{A/B}$ define que o hiperplano $g$ realiza a separação entre os conjutos $A$ e $B$. Na estratégia OVR, o padrão $♣$ pertence à classe composta por elementos $∘$ devido à  maior distância (perpendicular) em relação ao hiperplano $g{\circ/Ω-\{\circ\}}$. Embora o padrão apresente maior distância quanto ao hiperplano $g{◇/Ω-\{◇\}}$ e pertença à classe $Ω-\{◇\}$, não é possível determinar se este padrão pertence se este padrão pertence a classe $\circ$ ou $△$. Na estratégia OVO, o padrão $♣$ é classificado novamente segundo a classe $∘$, pois, entre os três casos binários analisados ($g_{∘/◇}$,$g_{△/◇}$ e $g_{∘/△}$), ele foi associado à classe $\circ$ duas vezes, em $g_{∘/◇}$ e $g_{∘/△}$.
 
+
 <div align="center">   
 
 ![figura11](images/figura211.png "figura2.11") <legend>Figura 2.11 - Aplicação das estratégias multiclasse OVR e OVO em um problema de separação de 3 classes.</legend> </div>
 
-A Figura 2.12 ilustra as regiões de decisão obtidas pelos métodos SSE e SVM (linear e com $C=100$). Apesar de definir regiões similares, nota-se o melhor posicionamento das superfícies de decisão geradas pelo método SVM.
+Para aplicar a estratégia de OVR utilizando o SVM, basta a inclusão de $\textbf{decision_function_shape='ovr'}$ durante a sua instanciação. A Figura 2.12 ilustra as regiões de decisão obtidas pelo SVM utilizando a estratégia.
 
-Figura 2.12 <div align="center"> 
+<div align="center"> 
     
-![figura](images/figura.jpg "figura ") <legend></legend>
+![figura12](images/figura212.png "figura 2.12") <legend>2.12 - Regiões de decisão definidas pelo SVM utilizando a estratégia OVR.</legend>
 </div>
 
-O Código 2.5 apresenta uma implementação que permite a aplicação de método SSE sobre um problema multiclasses com uso da estratégia OVR. Os argumentos da função $\textbf{muliclass_ovr_sse}$ correspondem aos padrões ($\textbf{X_train}$) e rótulos ($\textbf{Y_train}$) de treinamento, seguido por um $\textbf{array}$ de padrões a ser classificado ($\textbf{Y_test}$). Com relação ao método SVM, o mesmo pode ser obtido com inclusão de $\textbf{decision_function_shape='ovr'}$ durante a sua instanciação.
