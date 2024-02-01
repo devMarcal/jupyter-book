@@ -10,7 +10,7 @@
     }
 </style>
 
-# Exemplos
+# Capítulo 5: Exemplos
 
 Este capítulo contém alguns exemplos de códigos que utilizam os algoritmos discutidos nos capítulos anteriores. Os exemplos são desenvolvidos em python utilizando, principalmente, a biblioteca Scikit Learn.
 
