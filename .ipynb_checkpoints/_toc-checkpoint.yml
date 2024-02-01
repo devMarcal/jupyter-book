@@ -13,5 +13,14 @@ chapters:
         - file: svm
         - file: multiclasse
   - file: nao-linear
+    sections:
+        - file: kernel
+        - file: arvores
   - file: combinacao
-  - file: agrupamento
+    sections:
+        - file: votacao
+        - file: stacking
+        - file: floresta
+        - file: bagging
+        - file: boosting
+  - file: exemplos
