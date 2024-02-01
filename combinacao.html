@@ -65,8 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'combinacao';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Capítulo 5: Métodos de agrupamento" href="agrupamento.html" />
-    <link rel="prev" title="Capítulo 3: Classificadores não lineares" href="nao-linear.html" />
+    <link rel="next" title="4.1 Votação por maioria e soft voting" href="votacao.html" />
+    <link rel="prev" title="3.2 Árvores de decisão" href="arvores.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="introduction.html">
-                    Página inicial
+                    Apresentação
                 </a>
             </li>
         </ul>
@@ -178,9 +178,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="multiclasse.html">2.5 Estratétegias Multiclasse</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="nao-linear.html">Capítulo 3: Classificadores não lineares</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 4: Combinação de classificadores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agrupamento.html">Capítulo 5: Métodos de agrupamento</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nao-linear.html">Capítulo 3: Classificadores não lineares</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="kernel.html">3.1 Máquinas de vetores de suporte e função kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arvores.html">3.2 Árvores de decisão</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Capítulo 4: Combinação de classificadores</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="votacao.html">4.1 Votação por maioria e soft voting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stacking.html">4.2 Stacking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="floresta.html">4.3 Floresta Aleatória</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bagging.html">4.4 Bagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boosting.html">4.5 Boosting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exemplos.html">Capítulo 5: Métodos de agrupamento</a></li>
 </ul>
 
     </div>
@@ -378,8 +389,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-4-combinacao-de-classificadores">
+  <style>
+    h1 {
+        font-size: 39px;
+    }
+    legend {
+        font-size: 16px;
+    }
+    main {
+        text-align: justify;
+    }
+</style>
+<section class="tex2jax_ignore mathjax_ignore" id="capitulo-4-combinacao-de-classificadores">
 <h1>Capítulo 4: Combinação de classificadores<a class="headerlink" href="#capitulo-4-combinacao-de-classificadores" title="Permalink to this heading">#</a></h1>
+<p>A aplicação dos algoritmos de classificação depende diretamente da características dos dados e seu contexto e, embora existam muitos tipos de classificadores, a escolha de um só não é suficiente para distinguir as classes dos dados de forma eficiente e robusta. O aprendizado em conjunto é  uma vertente que busca ampliar essas possibilidades dos métodos de classificação, ao combinar classificadores conhecidos para resolver os problemas de distinção de classes.</p>
+<p>A combinação dos classificadores tem como objetivo explorar as melhores características que diferentes classificadores desempenham diante de uma aplicação. Ao unir esses modelos ajustados é esperado que se obtenha um desempenho de classificação mais robusto e menores taxas de erro.</p>
+<p>As técnicas de combinação são diversas e podem ser aplicadas tanto na saída dos classificadores quanto nas etapas de ajuste dos algoritmos. Além disso, os modelos podem dispor ou não de técnicas de otimização, o que aumenta ainda mais as possibilidades dos arranjos. A seguir, são apresentados os algoritmos de aprendizado em conjunto mais comumente utilizados em problemas de classificação.</p>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -413,20 +440,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="nao-linear.html"
+       href="arvores.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Capítulo 3: Classificadores não lineares</p>
+        <p class="prev-next-title">3.2 Árvores de decisão</p>
       </div>
     </a>
     <a class="right-next"
-       href="agrupamento.html"
+       href="votacao.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Capítulo 5: Métodos de agrupamento</p>
+        <p class="prev-next-title">4.1 Votação por maioria e soft voting</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

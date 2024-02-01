@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Capítulo 3: Classificadores não lineares &#8212; Introdução ao reconhecimento de Padrões</title>
+    <title>Capítulo 5: Métodos de agrupamento &#8212; Introdução ao reconhecimento de Padrões</title>
   
   
   
@@ -62,11 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'nao-linear';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exemplos';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3.1 Máquinas de vetores de suporte e função kernel" href="kernel.html" />
-    <link rel="prev" title="2.5 Estratétegias Multiclasse" href="multiclasse.html" />
+    <link rel="prev" title="4.5 Boosting" href="boosting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,7 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="multiclasse.html">2.5 Estratétegias Multiclasse</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Capítulo 3: Classificadores não lineares</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nao-linear.html">Capítulo 3: Classificadores não lineares</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="kernel.html">3.1 Máquinas de vetores de suporte e função kernel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arvores.html">3.2 Árvores de decisão</a></li>
 </ul>
@@ -191,7 +190,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="boosting.html">4.5 Boosting</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="exemplos.html">Capítulo 5: Métodos de agrupamento</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 5: Métodos de agrupamento</a></li>
 </ul>
 
     </div>
@@ -263,7 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnao-linear.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexemplos.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +292,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/nao-linear.md" target="_blank"
+      <li><a href="_sources/exemplos.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -375,7 +374,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Capítulo 3: Classificadores não lineares</h1>
+    <h1>Capítulo 5: Métodos de agrupamento</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,21 +388,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <style>
-    legend {
-        font-size: 16px;
-    }
-    main {
-        text-align: justify;
-    }
-</style>
-<section class="tex2jax_ignore mathjax_ignore" id="capitulo-3-classificadores-nao-lineares">
-<h1>Capítulo 3: Classificadores não lineares<a class="headerlink" href="#capitulo-3-classificadores-nao-lineares" title="Permalink to this heading">#</a></h1>
-<p>No capítulo anterior foram apresentados métodos capazes de realizar a distinção entre pares de classes linearmente separáveis. A aplicação desses métodos em problemas que envolvem classes não linearmente separáveis não foi restringida, mesmo sabendo de antemão que ocorrerão erros no processo de classificação. No entanto, existem casos em que a tentativa de distinguir duas classes através de uma superfície de decisão linear é inviável. A Figura 3.1 exemplifica problemas desta natureza. Uma forma de contornar este tipo de problema é fazendo uso de classificadores não lineares.</p>
-<div align="center"> 
-<p><img alt="figura31" src="_images/figura31.png" /> <legend>Figura 3.1 - Casos que inviabilizam a separação entre classes de forma linear.</legend> </div></p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-5-metodos-de-agrupamento">
+<h1>Capítulo 5: Métodos de agrupamento<a class="headerlink" href="#capitulo-5-metodos-de-agrupamento" title="Permalink to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -437,22 +423,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="multiclasse.html"
+       href="boosting.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">2.5 Estratétegias Multiclasse</p>
+        <p class="prev-next-title">4.5 Boosting</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="kernel.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">3.1 Máquinas de vetores de suporte e função kernel</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

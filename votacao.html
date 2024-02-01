@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Capítulo 5: Métodos de agrupamento &#8212; Introdução ao reconhecimento de Padrões</title>
+    <title>4.1 Votação por maioria e soft voting &#8212; Introdução ao reconhecimento de Padrões</title>
   
   
   
@@ -62,9 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'agrupamento';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'votacao';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4.2 Stacking" href="stacking.html" />
     <link rel="prev" title="Capítulo 4: Combinação de classificadores" href="combinacao.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -163,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="introduction.html">
-                    Página inicial
+                    Apresentação
                 </a>
             </li>
         </ul>
@@ -177,9 +178,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="multiclasse.html">2.5 Estratétegias Multiclasse</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="nao-linear.html">Capítulo 3: Classificadores não lineares</a></li>
-<li class="toctree-l1"><a class="reference internal" href="combinacao.html">Capítulo 4: Combinação de classificadores</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Capítulo 5: Métodos de agrupamento</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nao-linear.html">Capítulo 3: Classificadores não lineares</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="kernel.html">3.1 Máquinas de vetores de suporte e função kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arvores.html">3.2 Árvores de decisão</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="combinacao.html">Capítulo 4: Combinação de classificadores</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1 Votação por maioria e soft voting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stacking.html">4.2 Stacking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="floresta.html">4.3 Floresta Aleatória</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bagging.html">4.4 Bagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boosting.html">4.5 Boosting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exemplos.html">Capítulo 5: Métodos de agrupamento</a></li>
 </ul>
 
     </div>
@@ -251,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fagrupamento.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvotacao.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/agrupamento.md" target="_blank"
+      <li><a href="_sources/votacao.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -363,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Capítulo 5: Métodos de agrupamento</h1>
+    <h1>4.1 Votação por maioria e soft voting</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -377,8 +389,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-5-metodos-de-agrupamento">
-<h1>Capítulo 5: Métodos de agrupamento<a class="headerlink" href="#capitulo-5-metodos-de-agrupamento" title="Permalink to this heading">#</a></h1>
+  <style>
+    legend {
+        font-size: 16px;
+    }
+    main {
+        text-align: justify;
+    }
+</style>
+<section class="tex2jax_ignore mathjax_ignore" id="votacao-por-maioria-e-soft-voting">
+<h1>4.1 Votação por maioria e soft voting<a class="headerlink" href="#votacao-por-maioria-e-soft-voting" title="Permalink to this heading">#</a></h1>
+<p>A votação por maioria é uma estratégia intuitiva e de simples implementação. A decisão de classificação é tomada em favor da classe com maior frequência de predição pelos classificadores que constituem a combinação, como mostrado na Figura 4.1.</p>
+<div align="center"> 
+<p><img alt="figura41" src="_images/figura41.png" /> <legend>Figura 4.1 - Representação da estratégia de votação majoritária.</legend></div></p>
+<p>O soft voting é uma técnica de aprendizado de máquina que combina as previsões de vários modelos para gerar uma única previsão. Ele é diferente da votação majoritária, que simplesmente escolhe a previsão mais comum dos modelos. No soft voting, cada modelo atribui uma probabilidade a cada classe. Essas probabilidades são então combinadas para gerar uma nova probabilidade para cada classe. A classe com a probabilidade mais alta é então escolhida como a previsão final. A Figura 4.2 ilustra a estratégia.</p>
+<div align="center"> 
+<p><img alt="figura42" src="_images/figura42.png" /> <legend>Figura 4.2 - Representação da estratégia soft voting.</legend></div></p>
+<p>Outra maneira de implementar o soft voting é usar uma função de ponderação. A função de ponderação atribui pesos a cada modelo, de modo que as previsões dos modelos mais confiáveis tenham mais peso.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -419,6 +446,15 @@ document.write(`
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Capítulo 4: Combinação de classificadores</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="stacking.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">4.2 Stacking</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
