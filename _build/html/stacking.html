@@ -193,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="boosting.html">4.5 Boosting</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="exemplos.html">Capítulo 5: Métodos de agrupamento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exemplos.html">Exemplos</a></li>
 </ul>
 
     </div>
@@ -404,7 +404,7 @@ document.write(`
 <p>A estratégia conhecida como <span class="math notranslate nohighlight">\(\textit{stacking}\)</span> consiste na obtenção de um classificador que toma decisões baseadas em decisões anteriores, obtidas por um conjunto de classificadores. Portanto, o processo combina classificadores através de um outro classificador. A Figura 4.3 demonstra a estratégia descrita.</p>
 <div align="center"> 
 <p><img alt="figura43" src="_images/figura43.png" /> <legend>Figura 4.3 - Representação da estratégia de stacking.</legend></div></p>
-<p>O conjunto de amostras <span class="math notranslate nohighlight">\(D\)</span> é dividido em dois subconjuntos, <span class="math notranslate nohighlight">\(D_{1}\)</span> e <span class="math notranslate nohighlight">\(D2_{1}\)</span>. Em seguida, o conjunto <span class="math notranslate nohighlight">\(D_{1}\)</span> é utilizado para ajustar <span class="math notranslate nohighlight">\(N\)</span> classificadores, que são os modelos base. Posteriormente, um modelo final é treinado usando o conjunto <span class="math notranslate nohighlight">\(D_{2}\)</span> e as previsões dos modelos base como dados de entrada. O classificador final aprende a combinar as previsões dos modelos base para gerar uma previsão mais precisa.</p>
+<p>O conjunto de amostras <span class="math notranslate nohighlight">\(D\)</span> é dividido em dois subconjuntos, <span class="math notranslate nohighlight">\(D_{1}\)</span> e <span class="math notranslate nohighlight">\(D_{2}\)</span>. Em seguida, o conjunto <span class="math notranslate nohighlight">\(D_{1}\)</span> é utilizado para ajustar <span class="math notranslate nohighlight">\(N\)</span> classificadores, que são os modelos base. Posteriormente, um modelo final é treinado usando o conjunto <span class="math notranslate nohighlight">\(D_{2}\)</span> e as previsões dos modelos base como dados de entrada. O classificador final aprende a combinar as previsões dos modelos base para gerar uma previsão mais precisa.</p>
 <p>Os modelos base podem ser diferentes tipos de classificadores como regressão logística, ávore de decisão, SVM e etc. Possui custo computacional elevado, porém é considerada uma estratégia flexível e robusta. O stacking pode ser aplicado tanto em problemas de classificação, quanto em problemas de regressão.</p>
 </section>
 
